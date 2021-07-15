@@ -1,0 +1,17 @@
+.chat-header{
+    background-color: rgba(0, 0, 0, 0.03);
+}
+.profile-img{
+    padding: 4px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+.chat-body{
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 6px;
+}
+
