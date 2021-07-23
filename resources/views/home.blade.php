@@ -44,7 +44,7 @@
 @endsection
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script>
-    $(function() {
+   /* $(function() {
         let ipAddress = 'localhost';
         let serverPort = '3000';
         let socket = io(ipAddress  + ':' + serverPort);
@@ -61,5 +61,5 @@
         socket.on('sendChatToClient',(message) => {
             $('#recevied-message ul').append('<div class="text-right card bg-white"><div class="card-body text-black-50">'+message+'</div></div>&nbsp;');
         });
-    });
+    });*/
 </script>

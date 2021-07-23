@@ -20,15 +20,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('getMessages',[App\Http\Controllers\HomeController::class,'getMessagesList'])->name('getMessages');
+Route::post('sendMessage',[App\Http\Controllers\HomeController::class,'create'])->name('message.send');
 
-Route::get('/', function () {return view('home');})->middleware('auth');
+//
 
-Route::resource('messages','MessageController')->only([
-    'index',
-    'store'
-]);
+Route::get('/chat',function () {return view('index');});
+
+Route::get('/chat/rooms',[App\Http\Controllers\ChatController::class,'rooms']);
+Route::get('/chat/rooms',[App\Http\Controllers\ChatController::class,'rooms']);
+Route::get('/chat/room/{roomId}/messages',[App\Http\Controllers\ChatController::class,'messages']);
+Route::post('/chat/room/{roomId}/message',[App\Http\Controllers\ChatController::class,'newMessage']);

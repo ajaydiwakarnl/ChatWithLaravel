@@ -1,12 +1,6 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+require('./bootstrap');
 
-// require('./bootstrap');
-//
-// window.Vue = require('vue').default;
+window.Vue = require('vue').default;
 
 /**
  * The following block of code may be used to automatically register your
@@ -19,7 +13,9 @@
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('container-component', require('./components/ContainerComponent.vue').default);
+Vue.component('message-container-component', require('./components/MessageContainerComponent.vue').default);
+Vue.component('input-message-component', require('./components/InputMessageComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -27,47 +23,6 @@
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// const app = new Vue({
-//     el: '#app',
-//
-//     data: {
-//         messages: [],
-//         newMessage: ''
-//     },
-//
-//     created() {
-//         this.fetchMessages();
-//
-//         Echo.private('chat')
-//             .listen('MessageSentEvent', (e) => {
-//                 this.messages.push({
-//                     message: e.message.message,
-//                     user: e.user
-//                 });
-//             });
-//     },
-//
-//     methods: {
-//         fetchMessages() {
-//             axios.get('/messages').then(response => {
-//                 this.messages = response.data;
-//             });
-//         },
-//
-//         addMessage(message) {
-//             axios.post('/messages', {
-//                 message
-//             }).then(response => {
-//                 this.messages.push({
-//                     message: response.data.message.message,
-//                     user: response.data.user
-//                 });
-//             });
-//         },
-//
-//         sendMessage() {
-//             this.addMessage(this.newMessage);
-//             this.newMessage = '';
-//         }
-//     }
-// });
+const app = new Vue({
+    el: '#app',
+});

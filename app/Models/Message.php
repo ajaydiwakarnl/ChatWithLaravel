@@ -13,7 +13,13 @@ class Message extends Model
         'message'
     ];
 
-    public function user() {
-        return $this->belongsTo(User::class);
+    public function room(){
+        return $this->hasOne('App\Models\ChatRoom','id','chat_room_id');
     }
+
+
+    public function user(){
+        return $this->hasOne('App\Models\User','id','user_id');
+    }
+
 }
